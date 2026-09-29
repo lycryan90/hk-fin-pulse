@@ -9,6 +9,8 @@
     "lint": "eslint",
     "digest": "tsx scripts/run-digest.ts",
     "digest:seed": "tsx scripts/run-digest.ts --seed",
+    "digest:en": "tsx scripts/run-digest.ts --en",
+    "digest:zh": "tsx scripts/run-digest.ts --zh",
     "cron:install": "bash scripts/install-cron.sh",
     "cron:remove": "bash scripts/remove-cron.sh"
   },

@@ -23,6 +23,7 @@ export function compareDigests(
   current: Digest,
   previous: Digest,
 ): DayOverDayDiff {
+  const en = current.locale === "en-GB";
   const cur = new Set(current.themes.map((t) => t.label));
   const prev = new Set(previous.themes.map((t) => t.label));
   const addedThemes = [...cur].filter((t) => !prev.has(t));
@@ -32,9 +33,29 @@ export function compareDigests(
   const closedLoopShift = summariseClosedLoopShift(
     previous.closedLoopSummary,
     current.closedLoopSummary,
+    en,
   );
 
   const parts: string[] = [];
+  if (en) {
+    if (addedThemes.length) parts.push(`New themes: ${addedThemes.join("; ")}`);
+    if (removedThemes.length) parts.push(`Faded: ${removedThemes.join("; ")}`);
+    if (!addedThemes.length && !removedThemes.length) {
+      parts.push(
+        `Themes largely continue (${stayedThemes.slice(0, 3).join("; ") || "prior themes"})`,
+      );
+    }
+    parts.push(closedLoopShift);
+    return {
+      previousDate: previous.date,
+      addedThemes,
+      removedThemes,
+      stayedThemes,
+      closedLoopShift,
+      summary: parts.join(". ") + ".",
+    };
+  }
+
   if (addedThemes.length) parts.push(`新主線：${addedThemes.join("、")}`);
   if (removedThemes.length) parts.push(`淡出：${removedThemes.join("、")}`);
   if (!addedThemes.length && !removedThemes.length) {
@@ -52,11 +73,20 @@ export function compareDigests(
   };
 }
 
-function summariseClosedLoopShift(prev: string, cur: string): string {
+function summariseClosedLoopShift(prev: string, cur: string, en: boolean): string {
   const prevKeys = extractFocusWords(prev);
   const curKeys = extractFocusWords(cur);
   const gained = curKeys.filter((k) => !prevKeys.includes(k)).slice(0, 3);
   const lost = prevKeys.filter((k) => !curKeys.includes(k)).slice(0, 3);
+  if (en) {
+    if (!gained.length && !lost.length) {
+      return "Closed-loop emphasis is little changed, still around rates, funding and risk appetite";
+    }
+    const bits: string[] = ["Closed-loop narrative"];
+    if (gained.length) bits.push(`leans more on ${gained.join(", ")}`);
+    if (lost.length) bits.push(`mentions less of ${lost.join(", ")}`);
+    return bits.join(", ");
+  }
   if (!gained.length && !lost.length) {
     return "閉環敘事重心變化不大，仍圍繞利率、資金與風險偏好";
   }
@@ -66,8 +96,9 @@ function summariseClosedLoopShift(prev: string, cur: string): string {
   return bits.join("，");
 }
 
-const FOCUS = [
+const FOCUS_ZH = [
   "利率",
+  "息口",
   "通脹",
   "油價",
   "地緣",
@@ -84,8 +115,29 @@ const FOCUS = [
   "科技股",
 ] as const;
 
+const FOCUS_EN = [
+  "rate",
+  "inflation",
+  "oil",
+  "geopolit",
+  "regulat",
+  "crypto",
+  "renminbi",
+  "FX",
+  "yen",
+  "property",
+  "liquidity",
+  "haven",
+  "payroll",
+  "Treasury",
+  "technology",
+] as const;
+
 function extractFocusWords(text: string): string[] {
-  return FOCUS.filter((w) => text.includes(w));
+  const lower = text.toLowerCase();
+  const zh = FOCUS_ZH.filter((w) => text.includes(w));
+  const en = FOCUS_EN.filter((w) => lower.includes(w.toLowerCase()));
+  return [...zh, ...en];
 }
 
 export async function diffAgainstPrevious(

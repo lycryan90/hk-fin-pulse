@@ -1,0 +1,81 @@
+import type { ThemeId } from "@/lib/digest/schema";
+import type { DigestLocale } from "@/lib/locale/types";
+
+export const PRODUCT_LABEL: Record<DigestLocale, string> = {
+  "zh-HK": "聽為主 · 大局觀",
+  "en-GB": "Listen First · Big Picture",
+};
+
+export const THEME_LABELS_I18N: Record<DigestLocale, Record<ThemeId, string>> = {
+  "zh-HK": {
+    fed_rates: "美聯儲利率",
+    oil_geopolitics: "油價／中東",
+    hk_liquidity: "港元流動性",
+    regulation: "監管／加密",
+    cny_crossborder: "人民幣跨境",
+    asia_fx: "亞洲匯市",
+    domestic_demand: "內需復蘇",
+    digital_policy: "數位政策",
+    other: "其他宏觀",
+  },
+  "en-GB": {
+    fed_rates: "Fed rates",
+    oil_geopolitics: "Oil / Middle East",
+    hk_liquidity: "HK dollar liquidity",
+    regulation: "Regulation / crypto",
+    cny_crossborder: "Cross-border renminbi",
+    asia_fx: "Asian FX",
+    domestic_demand: "Mainland demand",
+    digital_policy: "Digital policy",
+    other: "Other macro",
+  },
+};
+
+export const UI = {
+  "zh-HK": {
+    workspace: "大局觀工作台",
+    regenerate: "重新生成",
+    generating: "生成中…",
+    seedDemo: "種子演示",
+    exportMd: "匯出 Markdown",
+    history: "歷史",
+    localeZh: "港中",
+    localeEn: "英式",
+    readAloud: "朗讀",
+    pause: "暫停",
+    resume: "繼續",
+    stop: "停止",
+    reading: "朗讀中…",
+    hkSection: "香港十則",
+    intlSection: "國際十則",
+    macroIntro: "宏觀引言",
+    thinking: "大局觀思考題",
+    closedLoop: "閉環總結",
+    vsYesterday: "與昨日對照",
+    civilian: "民生",
+    generateFailed: "生成失敗",
+  },
+  "en-GB": {
+    workspace: "Big Picture desk",
+    regenerate: "Regenerate",
+    generating: "Generating…",
+    seedDemo: "Seed demo",
+    exportMd: "Export Markdown",
+    history: "History",
+    localeZh: "HK Chinese",
+    localeEn: "British EN",
+    readAloud: "Read aloud",
+    pause: "Pause",
+    resume: "Resume",
+    stop: "Stop",
+    reading: "Reading…",
+    hkSection: "Hong Kong ten",
+    intlSection: "International ten",
+    macroIntro: "Macro briefing",
+    thinking: "Big-picture questions",
+    closedLoop: "Closed-loop summary",
+    vsYesterday: "Versus yesterday",
+    civilian: "For households",
+    generateFailed: "Generation failed",
+  },
+} as const;

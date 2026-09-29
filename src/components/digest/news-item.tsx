@@ -1,19 +1,20 @@
 import type { DigestItem } from "@/lib/digest/schema";
+import { UI } from "@/lib/locale/labels";
+import type { DigestLocale } from "@/lib/locale/types";
 
-const CATEGORY_LABEL: Record<DigestItem["category"], string> = {
-  finance: "finance",
-  geopolitics: "geopolitics",
-  government: "government",
-  society: "society",
-  other: "other",
-};
-
-export function NewsItem({ item }: { item: DigestItem }) {
+export function NewsItem({
+  item,
+  locale = "zh-HK",
+}: {
+  item: DigestItem;
+  locale?: DigestLocale;
+}) {
+  const t = UI[locale];
   return (
     <article className="digest-item border-t border-[var(--line)] py-6 first:border-t-0">
       <div className="mb-2 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs tracking-wide text-[var(--muted)]">
         <span className="font-medium text-[var(--accent)]">{item.id}</span>
-        <span>{CATEGORY_LABEL[item.category]}</span>
+        <span>{item.category}</span>
         <span>{item.source}</span>
         {item.sourceUrl ? (
           <a
@@ -22,12 +23,12 @@ export function NewsItem({ item }: { item: DigestItem }) {
             rel="noreferrer"
             className="underline decoration-[var(--line)] underline-offset-4 hover:text-[var(--ink)]"
           >
-            原文
+            {locale === "en-GB" ? "Source" : "原文"}
           </a>
         ) : null}
       </div>
       <h3 className="font-serif text-xl leading-snug text-[var(--ink)] md:text-2xl">
-        〔{item.title}〕
+        {locale === "en-GB" ? item.title : `〔${item.title}〕`}
       </h3>
       <p className="mt-3 text-[15px] leading-7 text-[var(--ink-soft)] md:text-base">
         {item.summary}
@@ -37,7 +38,9 @@ export function NewsItem({ item }: { item: DigestItem }) {
           {item.macroAnalysis}
         </p>
         {item.civilianLine ? (
-          <p className="mt-2 text-sm text-[var(--muted)]">民生：{item.civilianLine}</p>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            {t.civilian}：{item.civilianLine}
+          </p>
         ) : null}
       </div>
     </article>

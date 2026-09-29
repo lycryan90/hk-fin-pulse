@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { DEFAULT_LOCALE } from "@/lib/locale/types";
 
 export const ThemeIdSchema = z.enum([
   "fed_rates",
@@ -24,6 +25,8 @@ export const CategorySchema = z.enum([
 
 export type NewsCategory = z.infer<typeof CategorySchema>;
 
+export const LocaleSchema = z.enum(["zh-HK", "en-GB"]);
+
 export const DigestItemSchema = z.object({
   id: z.string(),
   region: z.enum(["hk", "intl"]),
@@ -42,7 +45,8 @@ export type DigestItem = z.infer<typeof DigestItemSchema>;
 export const DigestSchema = z.object({
   date: z.string(),
   createdAt: z.string(),
-  label: z.literal("聽為主 · 大局觀"),
+  locale: LocaleSchema.default(DEFAULT_LOCALE),
+  label: z.string(),
   themes: z.array(
     z.object({
       id: ThemeIdSchema,

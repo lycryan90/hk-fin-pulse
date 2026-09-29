@@ -18,7 +18,7 @@ export default async function HistoryDatePage({
 
   return (
     <main>
-      <WorkspaceToolbar date={digest.date} />
+      <WorkspaceToolbar digest={digest} />
       <DigestReport digest={digest} diff={diff} />
     </main>
   );

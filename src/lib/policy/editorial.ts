@@ -1,5 +1,6 @@
 import type { NewsCategory, ThemeId } from "@/lib/digest/schema";
 
+/** @deprecated Prefer THEME_LABELS_I18N from locale/labels */
 export const THEME_LABELS: Record<ThemeId, string> = {
   fed_rates: "美聯儲利率",
   oil_geopolitics: "油價／中東",

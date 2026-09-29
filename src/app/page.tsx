@@ -11,7 +11,7 @@ export default async function HomePage() {
 
   return (
     <main>
-      <WorkspaceToolbar date={digest.date} />
+      <WorkspaceToolbar digest={digest} />
       <DigestReport digest={digest} diff={diff} />
     </main>
   );

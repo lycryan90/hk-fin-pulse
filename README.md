@@ -9,9 +9,18 @@
 ```bash
 npm install
 npm run digest:seed   # 寫入演示報告（可選）
-npm run digest        # 抓取 RSS 並生成
+npm run digest        # 抓取 RSS 並生成（預設港式中文）
+npm run digest:en     # 全英式英文報告
+npm run digest:zh     # 全港式中文報告
 npm run dev           # http://localhost:3457
 ```
+
+### 語言規則
+
+- **港中（zh-HK）**：全文香港繁體／港式用語，英文來源標題會改寫成中文，禁止中英夾雜。
+- **英式（en-GB）**：全文 British English（UK spelling/grammar），中文來源標題會改寫成英文。
+- 預覽頁可切換語言後按「重新生成」；偏好會存入瀏覽器 localStorage。
+- **朗讀**：頁頂「朗讀」使用瀏覽器 Web Speech API（免費），按報告語言選 `zh-HK`／`en-GB` 聲線。
 
 瀏覽：
 

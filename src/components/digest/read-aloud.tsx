@@ -76,44 +76,30 @@ export function ReadAloud({ digest }: { digest: Digest }) {
     setStatus("idle");
   }
 
-  if (!supported) {
+  if (!supported) return null;
+
+  if (status === "idle") {
     return (
-      <p className="text-xs text-[var(--muted)]">
-        {locale === "en-GB"
-          ? "Read aloud needs a browser with Web Speech API."
-          : "呢個瀏覽器未支援網頁朗讀功能。"}
-      </p>
+      <Button size="sm" variant="ghost" onClick={speak}>
+        {t.readAloud}
+      </Button>
     );
   }
 
   return (
-    <div className="flex flex-wrap items-center gap-2">
-      {status === "idle" ? (
-        <Button size="sm" variant="outline" onClick={speak}>
-          {t.readAloud}
-        </Button>
-      ) : null}
+    <div className="inline-flex items-center gap-1">
       {status === "playing" ? (
-        <>
-          <Button size="sm" variant="outline" onClick={pause}>
-            {t.pause}
-          </Button>
-          <Button size="sm" variant="ghost" onClick={stop}>
-            {t.stop}
-          </Button>
-          <span className="text-xs text-[var(--accent)]">{t.reading}</span>
-        </>
-      ) : null}
-      {status === "paused" ? (
-        <>
-          <Button size="sm" variant="outline" onClick={resume}>
-            {t.resume}
-          </Button>
-          <Button size="sm" variant="ghost" onClick={stop}>
-            {t.stop}
-          </Button>
-        </>
-      ) : null}
+        <Button size="sm" variant="ghost" onClick={pause}>
+          {t.pause}
+        </Button>
+      ) : (
+        <Button size="sm" variant="ghost" onClick={resume}>
+          {t.resume}
+        </Button>
+      )}
+      <Button size="sm" variant="ghost" onClick={stop}>
+        {t.stop}
+      </Button>
     </div>
   );
 }

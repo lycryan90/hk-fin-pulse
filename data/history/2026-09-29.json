@@ -1,34 +1,34 @@
 {
   "date": "2026-09-29",
-  "createdAt": "2026-09-29T14:38:15.884Z",
+  "createdAt": "2026-09-29T14:45:31.134Z",
   "label": "聽為主 · 大局觀",
   "themes": [
-    {
-      "id": "fed_rates",
-      "label": "美聯儲利率"
-    },
     {
       "id": "domestic_demand",
       "label": "內需復蘇"
     },
     {
-      "id": "hk_liquidity",
-      "label": "港元流動性"
+      "id": "fed_rates",
+      "label": "美聯儲利率"
     },
     {
       "id": "cny_crossborder",
       "label": "人民幣跨境"
     },
     {
+      "id": "hk_liquidity",
+      "label": "港元流動性"
+    },
+    {
       "id": "regulation",
       "label": "監管／加密"
     }
   ],
-  "macroIntro": "美聯儲政策轉向與中東局勢等外圍變數交織，當日主線集中在美聯儲利率、內需復蘇、港元流動性。國際方面，Stock Market Today: Dow Rises As Oil Prices, Treasury Yields Fall; Nvidia Stock Hits Buy Point (Live Coverage) - Investor's Business Daily等消息牽動油價、債息與避險情緒；香港則面對分析：貼息政策可鼓勵首次置業人士入市 亦避免市場現炒風等發展，",
+  "macroIntro": "美聯儲政策、商品價格與地緣政治交織，當日主線落在內需復蘇、美聯儲利率、人民幣跨境。國際層面圍繞內需復蘇、美聯儲利率重新定價通脹與避險情緒；香港則受美聯儲利率與監管／加密等發展牽動，板塊表現分化。港元掛鈎下，美國利率路徑直接牽動本地資金成本與資產定價，普通人宜聚焦借貸成本與波動。離岸人民幣、監管補位與跨境融資機會亦同時出現，需要一併納入風險偏好調整。",
   "thinkingQuestions": [
-    "美聯儲若維持利率不變，香港股市尤其是科技板塊會得到什麼樣的支撐？",
-    "灰色加密資產渠道缺乏監管的風險下，香港監管當局應該採取哪些具體措施？",
-    "跨境基建與人民幣結算機會擴大時，香港離岸人民幣業務如何平衡收益與地緣風險？"
+    "美聯儲若維持利率不變，香港股市尤其是科技板塊會得到什麼類型的支撐？",
+    "灰色加密資產渠道缺乏監管時，香港當局應採取哪些具體措施保護市民？",
+    "跨境基建與人民幣結算擴大時，香港離岸人民幣業務如何平衡收益與地緣風險？"
   ],
   "hkItems": [
     {
@@ -38,9 +38,9 @@
       "source": "RTHK Greater China",
       "sourceUrl": "https://news.rthk.hk/rthk/ch/component/k2/1872052-20260929.htm",
       "title": "分析：貼息政策可鼓勵首次置業人士入市 亦避免市場現炒風",
-      "summary": "分析：貼息政策可鼓勵首次置業人士入市 亦避免市場現炒風。財政部、人民銀行、金融監管總局宣布，今個星期四起，符合條件家庭可享受購房貼息貸款規模最高可達100萬元人民幣，",
-      "macroAnalysis": "對香港而言，聯繫匯率下本地融資成本與資產定價會率先反映外圍利率與油價預期。監管空白或合規成本亦會影響普通人對金融服務的信任。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "普通人應留意按揭與信用卡息口、通脹感受及市場波動。",
+      "summary": "財政部、人民銀行、金融監管總局宣布，今個星期四起，符合條件家庭可享受購房貼息貸款規模最高可達100萬元人，反映美聯儲利率與監管／加密因素正改寫市場定價與政策預期。",
+      "macroAnalysis": "對香港而言，美聯儲利率與監管／加密相關事件提醒監管與消費者保護不能留白；一旦出現詐騙或洗錢，追索困難，亦會削弱對金融服務的信任，進而影響本地風險偏好與合規成本。",
+      "civilianLine": "留意按揭息口、通脹感受與投資組合波動。",
       "themeIds": [
         "fed_rates",
         "regulation",
@@ -55,9 +55,9 @@
       "source": "RTHK Greater China",
       "sourceUrl": "https://news.rthk.hk/rthk/ch/component/k2/1872028-20260929.htm",
       "title": "人行下調抵押補充貸款利率0.25個百分點 擴大貸款支持領域",
-      "summary": "人行下調抵押補充貸款利率0.25個百分點 擴大貸款支持領域。人民銀行宣布下調抵押補充貸款（PSL）利率0.25個百分點。一年期PSL利率由1.75厘降至1.5厘，",
-      "macroAnalysis": "與此同時，對香港而言，聯繫匯率下本地融資成本與資產定價會率先反映外圍利率與油價預期。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "普通人應留意按揭與信用卡息口、通脹感受及市場波動。",
+      "summary": "人民銀行宣布下調抵押補充貸款（PSL）利率0，反映美聯儲利率與港元流動性因素正改寫市場定價與政策預期，後續數據與官方表態將左右短線資金去向，投資人情緒因而在避險與趁低吸納之間搖擺。",
+      "macroAnalysis": "以普通人視角，聯繫匯率下美國息口預期會直接反映在拆息、按揭與企業融資成本；高估值成長股對利率敏感，普通人更應關注借貸成本與波動而非單日升跌，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "留意按揭息口、通脹感受與投資組合波動。",
       "themeIds": [
         "fed_rates",
         "hk_liquidity",
@@ -72,9 +72,9 @@
       "source": "RTHK Greater China",
       "sourceUrl": "https://news.rthk.hk/rthk/ch/component/k2/1872049-20260929.htm",
       "title": "公安與港警搗破盤踞粵港跨境地下錢莊犯罪集團拘捕170多人",
-      "summary": "公安與港警搗破盤踞粵港跨境地下錢莊犯罪集團拘捕170多人。內地公安聯同香港警方在5月展開行動，搗破一個盤踞粵港兩地的跨境地下錢莊犯罪集團，拘捕170多人，",
-      "macroAnalysis": "進一步看，對香港而言，聯繫匯率下本地融資成本與資產定價會率先反映外圍利率與油價預期。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "普通人應留意按揭與信用卡息口、通脹感受及市場波動。",
+      "summary": "內地公安聯同香港警方在5月展開行動，搗破一個盤踞粵港兩地的跨境地下錢莊犯罪集團，拘捕170多人，凍結15，反映港元流動性與美聯儲利率因素正改寫市場定價與政策預期。",
+      "macroAnalysis": "從資金面觀察，聯繫匯率下美國息口預期會直接反映在拆息、按揭與企業融資成本；高估值成長股對利率敏感，普通人更應關注借貸成本與波動而非單日升跌，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "留意按揭息口、通脹感受與投資組合波動。",
       "themeIds": [
         "hk_liquidity",
         "fed_rates",
@@ -89,9 +89,9 @@
       "source": "RTHK Greater China",
       "sourceUrl": "https://news.rthk.hk/rthk/ch/component/k2/1871943-20260929.htm",
       "title": "有議員對本港今年國慶黃金周零售及餐飲市道感樂觀",
-      "summary": "有議員對本港今年國慶黃金周零售及餐飲市道感樂觀。內地十一國慶黃金周即將展開，批發及零售界立法會議員邵家輝表示，本港多間食肆及商場推出優惠，事件凸顯cny_crossborder、asia_fx、dom。",
-      "macroAnalysis": "值得注意，對香港而言，聯繫匯率下本地融資成本與資產定價會率先反映外圍利率與油價預期。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "普通人應留意按揭與信用卡息口、通脹感受及市場波動。",
+      "summary": "內地十一國慶黃金周即將展開，批發及零售界立法會議員邵家輝表示，本港多間食肆及商場推出優惠，加上煙花匯演和，反映人民幣跨境與亞洲匯市因素正改寫市場定價與政策預期。",
+      "macroAnalysis": "就風險傳導來看，亞洲匯市波動會改變旅遊、進口消費與跨幣資產的匯兌結果；港元跟美元掛鈎，日圓等貨幣急升貶會間接影響香港對外商務與投資配置，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "留意按揭息口、通脹感受與投資組合波動。",
       "themeIds": [
         "cny_crossborder",
         "asia_fx",
@@ -105,9 +105,9 @@
       "source": "RTHK Greater China",
       "sourceUrl": "https://news.rthk.hk/rthk/ch/component/k2/1872032-20260929.htm",
       "title": "內地10月1日起實施居民房貸貼息 貼息1個百分點",
-      "summary": "內地10月1日起實施居民房貸貼息 貼息1個百分點。財政部、人民銀行及金融監管總局發出通知，10月1日起實施居民購房貸款貼息政策，暫定實施一年，事件凸顯regulation、cny_crossborde。",
-      "macroAnalysis": "另一層面，對香港而言，聯繫匯率下本地融資成本與資產定價會率先反映外圍利率與油價預期。監管空白或合規成本亦會影響普通人對金融服務的信任。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "普通人應留意按揭與信用卡息口、通脹感受及市場波動。",
+      "summary": "財政部、人民銀行及金融監管總局發出通知，10月1日起實施居民購房貸款貼息政策，暫定實施一年，可享受貼息的，反映監管／加密與人民幣跨境因素正改寫市場定價與政策預期。",
+      "macroAnalysis": "換作家庭資產配置，監管／加密與人民幣跨境相關事件提醒監管與消費者保護不能留白；一旦出現詐騙或洗錢，追索困難，亦會削弱對金融服務的信任，進而影響本地風險偏好與合規成本。",
+      "civilianLine": "留意按揭息口、通脹感受與投資組合波動。",
       "themeIds": [
         "regulation",
         "cny_crossborder",
@@ -121,9 +121,9 @@
       "source": "RTHK Local",
       "sourceUrl": "https://news.rthk.hk/rthk/ch/component/k2/1872048-20260929.htm",
       "title": "政府成功發行第4批數碼綠色債券 刷新全球最大數碼綠債發行紀錄",
-      "summary": "政府成功發行第4批數碼綠色債券 刷新全球最大數碼綠債發行紀錄。香港特區政府宣布，在政府可持續債券計劃下，成功定價約200億港元等值數碼綠色債券，涵蓋港元、人民幣、美元及歐元，",
-      "macroAnalysis": "此外，對香港而言，聯繫匯率下本地融資成本與資產定價會率先反映外圍利率與油價預期。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "普通人應留意按揭與信用卡息口、通脹感受及市場波動。",
+      "summary": "香港特區政府宣布，在政府可持續債券計劃下，成功定價約200億港元等值數碼綠色債券，涵蓋港元、人民幣、美元，反映港元流動性與美聯儲利率因素正改寫市場定價與政策預期。",
+      "macroAnalysis": "對香港而言，聯繫匯率下美國息口預期會直接反映在拆息、按揭與企業融資成本；高估值成長股對利率敏感，普通人更應關注借貸成本與波動而非單日升跌，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "留意按揭息口、通脹感受與投資組合波動。",
       "themeIds": [
         "hk_liquidity",
         "fed_rates",
@@ -137,9 +137,9 @@
       "source": "RTHK Greater China",
       "sourceUrl": "https://news.rthk.hk/rthk/ch/component/k2/1871974-20260929.htm",
       "title": "李家超稱香港五年規劃主軸是融入和服務國家發展大局",
-      "summary": "李家超稱香港五年規劃主軸是融入和服務國家發展大局。行政長官李家超在首屆華人發展論壇視像致辭，表示香港第一個五年規劃是主動對接國家「十五五」規劃的長遠布局，",
-      "macroAnalysis": "與此同時，對香港而言，聯繫匯率下本地融資成本與資產定價會率先反映外圍利率與油價預期。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "普通人應留意按揭與信用卡息口、通脹感受及市場波動。",
+      "summary": "行政長官李家超在首屆華人發展論壇視像致辭，表示香港第一個五年規劃是主動對接國家「十五五」規劃的長遠布局，反映人民幣跨境與內需復蘇因素正改寫市場定價與政策預期，後續數據與官方表態將左右短線資金去向。",
+      "macroAnalysis": "以普通人視角，跨境人民幣結算與基建融資若擴張，有利離岸人民幣與綠色債券業務，但地緣與航運風險也會牽動貿易融資額度與保險成本，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "留意按揭息口、通脹感受與投資組合波動。",
       "themeIds": [
         "cny_crossborder",
         "domestic_demand"
@@ -152,9 +152,9 @@
       "source": "RTHK Greater China",
       "sourceUrl": "https://news.rthk.hk/rthk/ch/component/k2/1871982-20260929.htm",
       "title": "中國據報擴大人工智能人才出境限制 防止關鍵技術外流美國",
-      "summary": "中國據報擴大人工智能人才出境限制 防止關鍵技術外流美國。彭博社報道，中國已擴大針對頂尖人工智能專業人士的出境限制，擴大至他們的家屬，目的是進一步收緊管控，防止關鍵技術外流美國。",
-      "macroAnalysis": "進一步看，對香港而言，聯繫匯率下本地融資成本與資產定價會率先反映外圍利率與油價預期。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "普通人應留意按揭與信用卡息口、通脹感受及市場波動。",
+      "summary": "彭博社報道，中國已擴大針對頂尖人工智能專業人士的出境限制，擴大至他們的家屬，目的是進一步收緊管控，防止關，反映內需復蘇與港元流動性因素正改寫市場定價與政策預期。",
+      "macroAnalysis": "進一步看，從資金面觀察，聯繫匯率下美國息口預期會直接反映在拆息、按揭與企業融資成本；高估值成長股對利率敏感，普通人更應關注借貸成本與波動而非單日升跌，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "留意按揭息口、通脹感受與投資組合波動。",
       "themeIds": [
         "domestic_demand",
         "hk_liquidity",
@@ -168,9 +168,9 @@
       "source": "RTHK Greater China",
       "sourceUrl": "https://news.rthk.hk/rthk/ch/component/k2/1871994-20260929.htm",
       "title": "中國貿促會：元首外交為中美工商界開展經貿合作提供穩定性",
-      "summary": "中國貿促會：元首外交為中美工商界開展經貿合作提供穩定性。中國貿促會新聞發言人王文帥表示，元首外交對中美關係具有不可替代的戰略引領作用，事件凸顯domestic_demand、other相關變數正改寫市。",
-      "macroAnalysis": "值得注意，對香港而言，聯繫匯率下本地融資成本與資產定價會率先反映外圍利率與油價預期。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "普通人應留意按揭與信用卡息口、通脹感受及市場波動。",
+      "summary": "中國貿促會新聞發言人王文帥表示，元首外交對中美關係具有不可替代的戰略引領作用，亦為兩國工商界開展經貿合作，反映內需復蘇與其他宏觀因素正改寫市場定價與政策預期，後續數據與官方表態將左右短線資金去向。",
+      "macroAnalysis": "就風險傳導來看，此事牽動內需復蘇與其他宏觀定價邏輯，本地股市、樓市融資與消費意願都可能受利率與風險偏好牽引，宜以中期傳導而非單日行情解讀，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "留意按揭息口、通脹感受與投資組合波動。",
       "themeIds": [
         "domestic_demand",
         "other"
@@ -183,9 +183,9 @@
       "source": "RTHK Local",
       "sourceUrl": "https://news.rthk.hk/rthk/ch/component/k2/1872018-20260929.htm",
       "title": "今年首八個月網上投資騙案下跌 周一鳴稱警方宣傳工作似乎有成效",
-      "summary": "今年首八個月網上投資騙案下跌 周一鳴稱警方宣傳工作似乎有成效。警務處處長周一鳴表示，本港1月至8月期間整體罪案數字微升0.2%、至59213宗，但大部分主要傳統嚴重罪案均錄得下跌，",
-      "macroAnalysis": "另一層面，對香港而言，聯繫匯率下本地融資成本與資產定價會率先反映外圍利率與油價預期。監管空白或合規成本亦會影響普通人對金融服務的信任。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "普通人應留意按揭與信用卡息口、通脹感受及市場波動。",
+      "summary": "警務處處長周一鳴表示，本港1月至8月期間整體罪案數字微升0，反映監管／加密因素正改寫市場定價與政策預期，後續數據與官方表態將左右短線資金去向，投資人情緒因而在避險與趁低吸納之間搖擺。",
+      "macroAnalysis": "換作家庭資產配置，監管／加密相關事件提醒監管與消費者保護不能留白；一旦出現詐騙或洗錢，追索困難，亦會削弱對金融服務的信任，進而影響本地風險偏好與合規成本，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "留意按揭息口、通脹感受與投資組合波動。",
       "themeIds": [
         "regulation"
       ]
@@ -196,32 +196,31 @@
       "id": "國 1",
       "region": "intl",
       "category": "finance",
-      "source": "Google News Business",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPMEVEUzBzSXJ3WXNSaFJKcHkwdUxSV0lYX2s0M0lTSXRNcDZUeF8xcEV4MC1Zd0IyT2hhQThDTTFoV0M2QlU0d19uQVcteXV6T0tSNVpjR0x2aTN4enNDZFZPVDJMdi1nNFFrSll5U0NKT054ajZlTW9fXzlUMlAwanF6YTV4bUtOV09LRnQ1OWN1NTF0MUVNWmxZbmR2aWJnOENiSEJVNTQtU3RfalNKSy1ZTTVLbG9teVBHeVVHTlRKVWlDc1ZsSHhuaE8wS25OZGhOdnh2TQ?oc=5",
-      "title": "Stock Market Today: Dow Rises As Oil Prices, Treasury Yields Fall; Nvidia Stock Hits Buy Point (Live Coverage) - Investor's Business Daily",
-      "summary": "Stock Market Today: Dow Rises As Oil Prices, Treasury Yields Fall; Nvidia Stock Hits Buy P。",
-      "macroAnalysis": "外圍變動可經美元流動性、避險情緒與進口成本渠道，間接影響香港市民的借貸與消費。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價與就業預期。",
+      "source": "Guardian World",
+      "sourceUrl": "https://www.theguardian.com/australia-news/live/2026/sep/29/treasurer-jim-chalmers-reserve-bank-cash-rate-decision-coalition-one-nation-ntwnfb",
+      "title": "Australia investigating reports of human rights activist detained in Vietnam – as it happened",
+      "summary": "外圍報導指出相關發展升溫，焦點落在美聯儲利率與內需復蘇；雖原文偏英語標題，其對利率、商品與風險偏好的含義仍值得香港讀者跟進，後續數據與官方表態將左右短線資金去向。",
+      "macroAnalysis": "對香港而言，聯繫匯率下美國息口預期會直接反映在拆息、按揭與企業融資成本；高估值成長股對利率敏感，普通人更應關注借貸成本與波動而非單日升跌，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價。",
       "themeIds": [
-        "oil_geopolitics",
-        "hk_liquidity",
-        "fed_rates"
+        "fed_rates",
+        "domestic_demand",
+        "other"
       ]
     },
     {
       "id": "國 2",
       "region": "intl",
       "category": "finance",
-      "source": "Google News Business",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOa3RNMzdiSWhXMF9NS2ljVHVIVG55RER4LUxseWpGT2IxOG1QeFQ0a1VSb0xiSGI2WG16Mkh2YkRFRlp5N0JSa2dhbTNGUnpqYkdtNnJTSG4yWlgxNzdWNEZvellubUZWQUhVS0lYZTZta05TNEFxTUhiTE53dXBJcjNxTmkxaEJGOW1yandQcHQ?oc=5",
-      "title": "Global shares are mixed after Wall Street dips and oil prices stabilize - AP News",
-      "summary": "Global shares are mixed after Wall Street dips and oil prices stabilize - AP News。",
-      "macroAnalysis": "與此同時，外圍變動可經美元流動性、避險情緒與進口成本渠道，間接影響香港市民的借貸與消費。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價與就業預期。",
+      "source": "Guardian World",
+      "sourceUrl": "https://www.theguardian.com/world/2026/sep/28/trump-xi-jinping-china-buy-weapons",
+      "title": "Trump asked Xi Jinping if China would like to buy US weapons, American ambassador says",
+      "summary": "外圍報導指出相關發展升溫，焦點落在內需復蘇與其他宏觀；雖原文偏英語標題，其對利率、商品與風險偏好的含義仍值得香港讀者跟進，後續數據與官方表態將左右短線資金去向。",
+      "macroAnalysis": "以普通人視角，外圍內需復蘇與其他宏觀變動可經美元流動性、避險情緒與進口價格渠道影響香港；資金重新定價時，成長股與高息防禦資產反應將分化，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價。",
       "themeIds": [
-        "oil_geopolitics",
-        "hk_liquidity",
-        "fed_rates"
+        "domestic_demand",
+        "other"
       ]
     },
     {
@@ -229,13 +228,12 @@
       "region": "intl",
       "category": "finance",
       "source": "Guardian World",
-      "sourceUrl": "https://www.theguardian.com/australia-news/live/2026/sep/29/treasurer-jim-chalmers-reserve-bank-cash-rate-decision-coalition-one-nation-ntwnfb",
-      "title": "Australia investigating reports of human rights activist detained in Vietnam – as it happened",
-      "summary": "Australia investigating reports of human rights activist detained in Vietnam – as it happe。",
-      "macroAnalysis": "進一步看，外圍變動可經美元流動性、避險情緒與進口成本渠道，間接影響香港市民的借貸與消費。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價與就業預期。",
+      "sourceUrl": "https://www.theguardian.com/us-news/2026/sep/25/donald-trump-xi-jinping-china-president-us-visit-red-carpet-treatment",
+      "title": "Pomp over progress in Xi’s US summit with Trump is a win for China",
+      "summary": "外圍報導指出相關發展升溫，焦點落在內需復蘇與其他宏觀；雖原文偏英語標題，其對利率、商品與風險偏好的含義仍值得香港讀者跟進，後續數據與官方表態將左右短線資金去向。",
+      "macroAnalysis": "從資金面觀察，外圍內需復蘇與其他宏觀變動可經美元流動性、避險情緒與進口價格渠道影響香港；資金重新定價時，成長股與高息防禦資產反應將分化，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價。",
       "themeIds": [
-        "fed_rates",
         "domestic_demand",
         "other"
       ]
@@ -244,45 +242,43 @@
       "id": "國 4",
       "region": "intl",
       "category": "finance",
-      "source": "Google News Business",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOTnhWdnpFUUFGc00tOWRCLWdaVHJVRUZhWWxUY24xc2l5X0ZrWWo4MHJuX3JSdGJlaDlQeDJYMlJpaGpXdlQ2SUpZTldZQldXZnlpV3V5endELWQydk93eVY1cE5GbDlkRkNIRE9haElBN3hqdWNkN3YzZlIwZUtBX3lFeEtDSE9vcGpqaVR6OTg4ZWROSmdsaTRKd05rY0JFVVZMcUlIY3hKMllM?oc=5",
-      "title": "Treasury Takes Aim at Tax-Avoiding Investment Strategies - WSJ",
-      "summary": "Treasury Takes Aim at Tax-Avoiding Investment Strategies - WSJ。事件凸顯hk_liquidity、fed_rates相關變數正改寫市場定價。",
-      "macroAnalysis": "值得注意，外圍變動可經美元流動性、避險情緒與進口成本渠道，間接影響香港市民的借貸與消費。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價與就業預期。",
+      "source": "Guardian World",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/sep/29/michele-bullock-rba-interest-rate-rise-middle-east-war-fuel-prices-analysis",
+      "title": "Danger zone: why war in the Middle East has landed the RBA’s inflation fight in tricky territory",
+      "summary": "外圍報導指出相關發展升溫，焦點落在油價／中東；雖原文偏英語標題，其對利率、商品與風險偏好的含義仍值得香港讀者跟進，後續數據與官方表態將左右短線資金去向，投資人情緒因而在避險與趁低吸納之間搖擺。",
+      "macroAnalysis": "就風險傳導來看，油價與地緣風險上升會推高進口能源成本與通脹預期，港股短線波動加大；同時能源鏈相關股份或受惠，但整體資金流向仍受美國利率路徑主導，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價。",
       "themeIds": [
-        "hk_liquidity",
-        "fed_rates"
+        "oil_geopolitics"
       ]
     },
     {
       "id": "國 5",
       "region": "intl",
       "category": "finance",
-      "source": "Google News Business",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQUVVYSDI4cFhkTXNkdXBRcHhCLXh0OThKTWk2YmlIbHlQeTRXN2J2dVlTZGgtUk00aUVjYURQdG55VGhXZXV3RV9BdkN0SmJqMGIwN2UycXVRY1I3aFJuaFplaFRaaXlOdG1qUHFuZWNmeThqdnh4UWNLdmVyU2MyTmx3?oc=5",
-      "title": "Could There Be a Run on the Bond Market? - WSJ",
-      "summary": "Could There Be a Run on the Bond Market? - WSJ。事件凸顯fed_rates、other相關變數正改寫市場定價節奏。各方正觀望後續數據與政策訊號，",
-      "macroAnalysis": "另一層面，外圍變動可經美元流動性、避險情緒與進口成本渠道，間接影響香港市民的借貸與消費。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價與就業預期。",
+      "source": "NPR Economy",
+      "sourceUrl": "https://www.npr.org/2026/09/26/nx-s1-5980302/mortgage-rates-break-past-7-as-bond-yields-surge-deepening-u-s-housing-gridlock",
+      "title": "Mortgage rates break past 7% as bond yields surge, deepening U.S. housing gridlock",
+      "summary": "外圍報導指出相關發展升溫，焦點落在港元流動性與美聯儲利率；雖原文偏英語標題，其對利率、商品與風險偏好的含義仍值得香港讀者跟進，後續數據與官方表態將左右短線資金去向。",
+      "macroAnalysis": "換作家庭資產配置，聯繫匯率下美國息口預期會直接反映在拆息、按揭與企業融資成本；高估值成長股對利率敏感，普通人更應關注借貸成本與波動而非單日升跌，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價。",
       "themeIds": [
-        "fed_rates",
-        "other"
+        "hk_liquidity",
+        "fed_rates"
       ]
     },
     {
       "id": "國 6",
       "region": "intl",
       "category": "finance",
-      "source": "Guardian World",
-      "sourceUrl": "https://www.theguardian.com/world/2026/sep/28/trump-xi-jinping-china-buy-weapons",
-      "title": "Trump asked Xi Jinping if China would like to buy US weapons, American ambassador says",
-      "summary": "Trump asked Xi Jinping if China would like to buy US weapons, American ambassador says。",
-      "macroAnalysis": "此外，外圍變動可經美元流動性、避險情緒與進口成本渠道，間接影響香港市民的借貸與消費。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價與就業預期。",
+      "source": "Google News World",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQdWlWRnRiYzFxZDFjaUNUcmcya3dPTnFXNlBObFBKUXNqRm5wcWJteTgtdnpQYS1sZHJ6NW9vc0swVVVUYVZkZ1lxSEJlSGlUZlhqR0ZiOFNrVmxhckI3NWJrTGxJaVZuSm9kbWJCdEp1bk1YWk44Vzl4bXh6NWx6Z2UzSDgwZ0pSeU1JeTdBclBZaDVTNDIyUHJIbHBlSFRvRjQ5RFhTb0dzNTZZR0h2VFRmY2VxRUVHVDJ4Z05uUlA?oc=5",
+      "title": "‘On a scale of 1 to 10, 10’: Trump’s midterm travel schedule underscores GOP troubles - Politico",
+      "summary": "外圍報導指出相關發展升溫，焦點落在數位政策；雖原文偏英語標題，其對利率、商品與風險偏好的含義仍值得香港讀者跟進，後續數據與官方表態將左右短線資金去向，投資人情緒因而在避險與趁低吸納之間搖擺。",
+      "macroAnalysis": "對香港而言，海外若收緊演算法與數位照護責任，本地平台合規成本可能上升，亦提醒香港在保護年輕用戶與網絡規管之間需找到可執行平衡，並牽動香港資金成本與通脹感受，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價。",
       "themeIds": [
-        "domestic_demand",
-        "other"
+        "digital_policy"
       ]
     },
     {
@@ -290,26 +286,25 @@
       "region": "intl",
       "category": "finance",
       "source": "Guardian World",
-      "sourceUrl": "https://www.theguardian.com/us-news/2026/sep/25/donald-trump-xi-jinping-china-president-us-visit-red-carpet-treatment",
-      "title": "Pomp over progress in Xi’s US summit with Trump is a win for China",
-      "summary": "Pomp over progress in Xi’s US summit with Trump is a win for China。事件凸顯domestic_demand、other相關變數正改寫市。",
-      "macroAnalysis": "與此同時，外圍變動可經美元流動性、避險情緒與進口成本渠道，間接影響香港市民的借貸與消費。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價與就業預期。",
+      "sourceUrl": "https://www.theguardian.com/world/2026/sep/29/estonia-blames-russia-arson-attack-drone-maker-ukraine",
+      "title": "Estonia blames Russia for arson attack on drone maker supplying Ukraine",
+      "summary": "外圍報導指出相關發展升溫，焦點落在數位政策；雖原文偏英語標題，其對利率、商品與風險偏好的含義仍值得香港讀者跟進，後續數據與官方表態將左右短線資金去向，投資人情緒因而在避險與趁低吸納之間搖擺。",
+      "macroAnalysis": "以普通人視角，海外若收緊演算法與數位照護責任，本地平台合規成本可能上升，亦提醒香港在保護年輕用戶與網絡規管之間需找到可執行平衡，並牽動香港資金成本與通脹感受，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價。",
       "themeIds": [
-        "domestic_demand",
-        "other"
+        "digital_policy"
       ]
     },
     {
       "id": "國 8",
       "region": "intl",
       "category": "finance",
-      "source": "NPR Economy",
-      "sourceUrl": "https://www.npr.org/2026/09/26/nx-s1-5980302/mortgage-rates-break-past-7-as-bond-yields-surge-deepening-u-s-housing-gridlock",
-      "title": "Mortgage rates break past 7% as bond yields surge, deepening U.S. housing gridlock",
-      "summary": "Mortgage rates break past 7% as bond yields surge, deepening U.S. housing gridlock。",
-      "macroAnalysis": "進一步看，外圍變動可經美元流動性、避險情緒與進口成本渠道，間接影響香港市民的借貸與消費。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價與就業預期。",
+      "source": "Guardian World",
+      "sourceUrl": "https://www.theguardian.com/artanddesign/2026/sep/29/jmw-turner-love-letter-rome-from-mount-aventine-auction",
+      "title": "JMW Turner’s ‘great love letter’ to Rome makes brief return to city before UK auction",
+      "summary": "外圍報導指出相關發展升溫，焦點落在港元流動性與美聯儲利率；雖原文偏英語標題，其對利率、商品與風險偏好的含義仍值得香港讀者跟進，後續數據與官方表態將左右短線資金去向。",
+      "macroAnalysis": "從資金面觀察，聯繫匯率下美國息口預期會直接反映在拆息、按揭與企業融資成本；高估值成長股對利率敏感，普通人更應關注借貸成本與波動而非單日升跌，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價。",
       "themeIds": [
         "hk_liquidity",
         "fed_rates"
@@ -322,9 +317,9 @@
       "source": "Google News World",
       "sourceUrl": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQeF9OOTF0QnZwN0hJRzQtakxHT1JFU0ppQWFmeENtRmlJMGNQUl9qdDNCbU9IemlIQ0hWN3Q1ZlF0U3FSSGFSTV9WcmhuYVpnMTVxSTJJX1VENWZySWRNS2pPV3hGSEVUSzRJcnVaN1JpVTBsT0VHRnFNa3IzWno4MnhJcXA?oc=5",
       "title": "Three deaths, three states, 24 hours: one day in ICE’s quiet but ‘gruesome’ surge - The Guardian",
-      "summary": "Three deaths, three states, 24 hours: one day in ICE’s quiet but ‘gruesome’ surge - The Gu。",
-      "macroAnalysis": "值得注意，外圍變動可經美元流動性、避險情緒與進口成本渠道，間接影響香港市民的借貸與消費。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價與就業預期。",
+      "summary": "外圍報導指出相關發展升溫，焦點落在其他宏觀；雖原文偏英語標題，其對利率、商品與風險偏好的含義仍值得香港讀者跟進，後續數據與官方表態將左右短線資金去向，投資人情緒因而在避險與趁低吸納之間搖擺。",
+      "macroAnalysis": "就風險傳導來看，外圍其他宏觀變動可經美元流動性、避險情緒與進口價格渠道影響香港；資金重新定價時，成長股與高息防禦資產反應將分化，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價。",
       "themeIds": [
         "other"
       ]
@@ -336,22 +331,22 @@
       "source": "Guardian World",
       "sourceUrl": "https://www.theguardian.com/world/2026/sep/27/melbourne-man-disappearance-south-american-hiking-trail-search-peru",
       "title": "Melbourne man’s mysterious disappearance on popular Peru hiking trail prompts widespread search",
-      "summary": "Melbourne man’s mysterious disappearance on popular Peru hiking trail prompts widespread s。",
-      "macroAnalysis": "另一層面，外圍變動可經美元流動性、避險情緒與進口成本渠道，間接影響香港市民的借貸與消費。投資者宜把焦點放在利率路徑與波動，而非單日指數升跌。資金重新定價風險時，高估值成長股與高息防禦資產反應將分化。",
-      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價與就業預期。",
+      "summary": "外圍報導指出相關發展升溫，焦點落在其他宏觀；雖原文偏英語標題，其對利率、商品與風險偏好的含義仍值得香港讀者跟進，後續數據與官方表態將左右短線資金去向，投資人情緒因而在避險與趁低吸納之間搖擺。",
+      "macroAnalysis": "換作家庭資產配置，外圍其他宏觀變動可經美元流動性、避險情緒與進口價格渠道影響香港；資金重新定價時，成長股與高息防禦資產反應將分化，高息環境下現金流穩定資產相對受注目。",
+      "civilianLine": "關注油價、匯率與海外政策如何影響本地物價。",
       "themeIds": [
         "other"
       ]
     }
   ],
-  "closedLoopSummary": "外部衝擊來自美聯儲利率、內需復蘇、港元流動性等主線，先改寫美債收益率、油價與避險貨幣的相對吸引力，再傳導至全球風險偏好。市場定價層面，利率路徑與商品通脹預期決定成長股折現與防禦資產息差；香港在聯繫匯率下，拆息、按揭與企業融資成本跟蹤美元流動性，港股板塊因而出現科技反彈、週期承壓等分化。民生與制度層面，加密自助機等監管空白提醒消費者保護與反洗錢需要補位，進口能源成本與物價感受亦會影響家庭預算。展望上，投資者宜緊盯美聯儲利率路徑、中東地緣與本地監管動向三條線索，以閉環方式調整資產配置與風險偏好。",
+  "closedLoopSummary": "外部衝擊來自內需復蘇、美聯儲利率、人民幣跨境等主線，先改寫美債收益率、油價與避險貨幣的相對吸引力，再傳導至全球風險偏好。市場定價上，利率路徑與商品通脹預期決定成長股折現與防禦資產息差；香港在聯繫匯率下，拆息、按揭與企業融資成本跟蹤美元流動性，港股因而出現板塊分化。民生與制度層面，監管空白與反洗錢需求提醒消費者保護必須補位，進口成本與物價感受亦影響家庭預算。展望上，宜緊盯美聯儲利率路徑、地緣供應風險與本地監管動向，以閉環方式調整配置與風險偏好。",
   "meta": {
     "writerMode": "heuristic",
     "ingestStats": {
-      "fetched": 150,
+      "fetched": 125,
       "used": 20,
       "seedFilled": 0
     },
-    "generatedAt": "2026-09-29T14:38:15.884Z"
+    "generatedAt": "2026-09-29T14:45:31.134Z"
   }
 }

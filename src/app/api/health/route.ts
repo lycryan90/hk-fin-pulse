@@ -1,13 +1,14 @@
 import { NextResponse } from "next/server";
 import { readLatestDigest } from "@/lib/digest/store";
 import { ingestArticles } from "@/lib/pipeline/ingest";
+import { llmConfigured, llmEndpoint } from "@/lib/writer/llm";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
   const latest = await readLatestDigest();
-  const hasLlm = Boolean(process.env.LLM_API_KEY || process.env.OPENAI_API_KEY);
+  const hasLlm = llmConfigured();
   let rssFetched = 0;
   let sourceErrors: string[] = [];
   try {
@@ -18,10 +19,15 @@ export async function GET() {
     sourceErrors = ["ingest_failed"];
   }
 
+  const endpoint = hasLlm ? llmEndpoint() : null;
+
   return NextResponse.json({
     ok: true,
     writerModeDefault: hasLlm ? "llm-assisted-if-available" : "heuristic",
     hasLlmKey: hasLlm,
+    llm: hasLlm
+      ? { base: endpoint!.base, model: endpoint!.model }
+      : { base: null, model: null },
     latestGeneratedAt: latest?.meta.generatedAt ?? null,
     latestDate: latest?.date ?? null,
     rssFetched,

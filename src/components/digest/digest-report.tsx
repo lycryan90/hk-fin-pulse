@@ -1,9 +1,22 @@
+import type { DayOverDayDiff } from "@/lib/digest/compare";
 import type { Digest } from "@/lib/digest/schema";
+import { DISCLAIMER_LONG, DISCLAIMER_SHORT } from "@/lib/digest/disclaimer";
+import { DayOverDay } from "@/components/digest/day-over-day";
 import { NewsItem } from "@/components/digest/news-item";
 
-export function DigestReport({ digest }: { digest: Digest }) {
+export function DigestReport({
+  digest,
+  diff = null,
+}: {
+  digest: Digest;
+  diff?: DayOverDayDiff | null;
+}) {
   return (
     <div className="digest-report mx-auto max-w-3xl px-4 pb-20 pt-8 md:px-6">
+      <aside className="mb-8 border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm leading-6 text-[var(--ink-soft)]">
+        {DISCLAIMER_LONG}
+      </aside>
+
       <header className="animate-fade-up mb-10">
         <p className="text-sm tracking-[0.2em] text-[var(--muted)]">港聞 10 · 國際 10</p>
         <h1 className="mt-2 font-serif text-4xl leading-tight text-[var(--ink)] md:text-5xl">
@@ -26,6 +39,8 @@ export function DigestReport({ digest }: { digest: Digest }) {
           ))}
         </div>
       </section>
+
+      <DayOverDay diff={diff} />
 
       <section className="animate-fade-up mb-12 delay-2">
         <h2 className="mb-3 font-serif text-lg text-[var(--ink)]">宏觀引言</h2>
@@ -77,7 +92,7 @@ export function DigestReport({ digest }: { digest: Digest }) {
         生成模式 {digest.meta.writerMode} · 抓取 {digest.meta.ingestStats.fetched} ·
         種子補位 {digest.meta.ingestStats.seedFilled}
         <br />
-        本報告僅供宏觀閱讀，不構成投資建議。
+        {DISCLAIMER_SHORT}
       </footer>
     </div>
   );

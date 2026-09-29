@@ -1,6 +1,10 @@
+import { loadEnvFile } from "../src/lib/env";
 import { generateDigest } from "../src/lib/pipeline/run";
 
 async function main() {
+  await loadEnvFile(".env");
+  await loadEnvFile(".env.local");
+
   const forceSeed = process.argv.includes("--seed");
   const digest = await generateDigest({ forceSeed });
   console.log(

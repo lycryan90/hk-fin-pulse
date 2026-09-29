@@ -34,10 +34,8 @@ yarn-error.log*
 .env*
 !.env.example
 
-# runtime digests (seed may be committed optionally)
-# keep structure; ignore churn if desired — we commit latest for demo
-# /data/latest-digest.json
-# /data/history/
+# cron / runtime logs
+/data/logs/
 
 # vercel
 .vercel

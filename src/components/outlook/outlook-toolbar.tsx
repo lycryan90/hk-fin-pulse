@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ReadAloud } from "@/components/digest/read-aloud";
 import type { Digest } from "@/lib/digest/schema";
 import { UI } from "@/lib/locale/labels";
 import {
@@ -15,15 +14,25 @@ import {
 
 const STORAGE_KEY = "hk-fin-pulse-locale";
 
-export function WorkspaceToolbar({ digest }: { digest?: Digest | null }) {
+export function OutlookToolbar({
+  digest,
+  localeHint,
+}: {
+  digest?: Digest | null;
+  localeHint?: DigestLocale;
+}) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [locale, setLocale] = useState<DigestLocale>(
-    digest?.locale ?? DEFAULT_LOCALE,
+    localeHint ?? digest?.locale ?? DEFAULT_LOCALE,
   );
 
   useEffect(() => {
+    if (localeHint) {
+      setLocale(localeHint);
+      return;
+    }
     if (digest?.locale) {
       setLocale(digest.locale);
       return;
@@ -34,7 +43,7 @@ export function WorkspaceToolbar({ digest }: { digest?: Digest | null }) {
     } catch {
       /* ignore */
     }
-  }, [digest?.locale]);
+  }, [digest?.locale, localeHint]);
 
   function changeLocale(next: DigestLocale) {
     setLocale(next);
@@ -49,7 +58,7 @@ export function WorkspaceToolbar({ digest }: { digest?: Digest | null }) {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/digest/generate", {
+      const res = await fetch("/api/outlook/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ locale }),
@@ -59,7 +68,6 @@ export function WorkspaceToolbar({ digest }: { digest?: Digest | null }) {
         throw new Error(data.error || UI[locale].generateFailed);
       }
       router.refresh();
-      router.push("/");
     } catch (e) {
       setError(e instanceof Error ? e.message : UI[locale].generateFailed);
     } finally {
@@ -68,13 +76,18 @@ export function WorkspaceToolbar({ digest }: { digest?: Digest | null }) {
   }
 
   const t = UI[locale];
+  const outlookLabel = locale === "en-GB" ? "Outlook" : "趨勢";
 
   return (
     <div className="sticky top-0 z-20 border-b border-[var(--line)]/80 bg-[var(--paper)]/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-2xl items-center justify-between gap-3 px-5 py-3">
-        <Link href="/" className="font-serif text-[15px] tracking-wide text-[var(--ink)]">
-          {t.workspace}
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link href="/" className="font-serif text-[15px] tracking-wide text-[var(--muted)] hover:text-[var(--ink)]">
+            {t.workspace}
+          </Link>
+          <span className="text-[var(--line)]">/</span>
+          <span className="font-serif text-[15px] text-[var(--ink)]">{outlookLabel}</span>
+        </div>
         <div className="flex items-center gap-1 text-xs">
           <button
             type="button"
@@ -91,20 +104,10 @@ export function WorkspaceToolbar({ digest }: { digest?: Digest | null }) {
           >
             {t.localeEn}
           </button>
-          {digest ? <ReadAloud digest={digest} /> : null}
           <Button size="sm" variant="ghost" onClick={onGenerate} disabled={loading}>
             {loading ? t.generating : t.regenerate}
           </Button>
-          <Link
-            href="/outlook"
-            className="px-1.5 py-1 text-[var(--muted)] hover:text-[var(--ink)]"
-          >
-            {locale === "en-GB" ? "Outlook" : "趨勢"}
-          </Link>
-          <Link
-            href="/history"
-            className="px-1.5 py-1 text-[var(--muted)] hover:text-[var(--ink)]"
-          >
+          <Link href="/history" className="px-1.5 py-1 text-[var(--muted)] hover:text-[var(--ink)]">
             {t.history}
           </Link>
         </div>

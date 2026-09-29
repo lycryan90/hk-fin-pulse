@@ -38,6 +38,9 @@ yarn-error.log*
 /data/logs/
 # local writer comparisons may contain freshly generated copy
 /data/compare/
+# outlook runtime (optional commit of latest)
+# /data/latest-outlook.json
+# /data/outlook-history/
 
 # vercel
 .vercel

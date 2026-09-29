@@ -54,7 +54,11 @@ function systemPrompt(locale: DigestLocale): string {
   return `你是香港宏觀財經編輯，全文必須用香港繁體中文／港式用語（可用「嘅／喺／嚟講／唔係」等香港書面語習慣），禁止夾雜英文句子或英文標題原文。禁止投資買賣建議。輸出嚴格 JSON。概要與宏觀分析各約80-100字，必須含香港或普通人傳導視角。閉環總結按：外部衝擊→市場定價→香港傳導→民生與制度→展望。產品名稱：${PRODUCT_LABEL["zh-HK"]}。`;
 }
 
-async function chatJson(prompt: string, locale: DigestLocale): Promise<unknown | null> {
+export async function callLlmJson(
+  system: string,
+  prompt: string,
+  temperature = 0.4,
+): Promise<unknown | null> {
   if (!llmConfigured()) return null;
   const { base, key, model } = llmEndpoint();
   const controller = new AbortController();
@@ -69,10 +73,10 @@ async function chatJson(prompt: string, locale: DigestLocale): Promise<unknown |
       },
       body: JSON.stringify({
         model,
-        temperature: 0.4,
+        temperature,
         response_format: { type: "json_object" },
         messages: [
-          { role: "system", content: systemPrompt(locale) },
+          { role: "system", content: system },
           { role: "user", content: prompt },
         ],
       }),
@@ -93,6 +97,10 @@ async function chatJson(prompt: string, locale: DigestLocale): Promise<unknown |
   } finally {
     clearTimeout(timer);
   }
+}
+
+async function chatJson(prompt: string, locale: DigestLocale): Promise<unknown | null> {
+  return callLlmJson(systemPrompt(locale), prompt);
 }
 
 function coalesceItems(

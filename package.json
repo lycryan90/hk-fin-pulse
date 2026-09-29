@@ -11,6 +11,10 @@
     "digest:seed": "tsx scripts/run-digest.ts --seed",
     "digest:en": "tsx scripts/run-digest.ts --en",
     "digest:zh": "tsx scripts/run-digest.ts --zh",
+    "outlook": "tsx scripts/run-outlook.ts",
+    "outlook:zh": "tsx scripts/run-outlook.ts --zh",
+    "outlook:en": "tsx scripts/run-outlook.ts --en",
+    "outlook:heuristic": "tsx scripts/run-outlook.ts --heuristic",
     "cron:install": "bash scripts/install-cron.sh",
     "cron:remove": "bash scripts/remove-cron.sh"
   },

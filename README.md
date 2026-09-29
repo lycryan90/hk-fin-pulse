@@ -24,41 +24,47 @@ npm run dev           # http://localhost:3457
 
 瀏覽：
 
-- `/` 最新報告預覽（含昨日對照、免責聲明）
+- `/` 最新日報
+- `/outlook` **趨勢及展望**（地緣／金融貨幣／中港核心／板塊輪動）
 - `/history` 本地歷史
-- `GET /api/digest` 最新 JSON
-- `GET /api/digest/diff` 與昨日主線／閉環對照
-- `POST /api/digest/generate` 重新生成（body 可選 `{ "forceSeed": true }`）
-- `GET /api/digest/export?format=md` 匯出 Markdown（頂部含免責）
-- `GET /api/health` RSS／寫手狀態
+- `GET /api/digest` · `POST /api/digest/generate`
+- `GET /api/outlook` · `POST /api/outlook/generate`
+- `GET /api/health`
 
-## 每日自動生成（本機 cron，零月費）
+## 趨勢及展望（建議接 LLM）
+
+每週綜合近日 digest + 最新頭條，寫：
+
+- 全球地緣政治
+- 金融與貨幣
+- 中港政治經濟核心
+- 板塊輪動（油價／黃金、新股潮、息口敏感 vs 防守等）
+- 下週留意清單
 
 ```bash
-npm run cron:install   # 預設每日 07:00 執行 npm run digest
-npm run cron:remove    # 移除
+npm run outlook          # 優先 LLM；失敗則骨架 fallback
+npm run outlook:heuristic
 ```
 
-日誌寫入 `data/logs/cron-digest.log`。亦可手動：
+## 自動排程（本機 cron）
 
 ```bash
-0 7 * * * cd /path/to/hk-fin-pulse && npm run digest >> data/logs/cron-digest.log 2>&1
+npm run cron:install
+# 每日 07:00 → npm run digest
+# 逢星期五 21:00 → npm run outlook
+npm run cron:remove
 ```
 
-## 可選 LLM（非必需）
+## 可選 LLM
 
-複製 `.env.example` 為 `.env` 後填入：
+趨勢頁**強烈建議**設定 LLM（Gemini／OpenAI 相容／Ollama），否則只得結構骨架。
 
 ```bash
 cp .env.example .env
 # LLM_API_KEY=...
-# LLM_BASE_URL=https://api.openai.com/v1   # 或 Ollama: http://127.0.0.1:11434/v1
-# LLM_API_KEY=ollama                      # Ollama 常用占位
-# LLM_MODEL=gpt-4o-mini                   # 或 llama3.2
-# LLM_ENABLED=false                       # 強制關閉 LLM
+# LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai
+# LLM_MODEL=gemini-3.8-flash
 ```
-
-CLI 與 API 會自動讀取 `.env`／`.env.local`。無 key 或呼叫失敗時回退 `heuristic`，報告仍完整。`GET /api/health` 可查看 LLM 設定摘要。
 
 ## 新聞來源
 

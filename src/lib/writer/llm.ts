@@ -20,7 +20,7 @@ export type WriterBundle = {
   llmNote?: string;
 };
 
-const LLM_TIMEOUT_MS = 45_000;
+const LLM_TIMEOUT_MS = Number(process.env.LLM_TIMEOUT_MS || 90_000);
 
 export function llmConfigured(): boolean {
   if (process.env.LLM_ENABLED === "0" || process.env.LLM_ENABLED === "false") {

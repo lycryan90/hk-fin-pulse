@@ -36,6 +36,8 @@ yarn-error.log*
 
 # cron / runtime logs
 /data/logs/
+# local writer comparisons may contain freshly generated copy
+/data/compare/
 
 # vercel
 .vercel

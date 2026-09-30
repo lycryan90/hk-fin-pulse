@@ -92,12 +92,21 @@ export INSTALL_DIR PORT WITH_CRON
 export PATH="$PATH"
 bash "$INSTALL_DIR/install/linux/install.sh"
 
+# Make command available in THIS shell too
+export PATH="$HOME/.local/bin:$PATH"
+# shellcheck disable=SC1091
+[[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
+
 echo
-echo "搞掂。之後每次啟動只需要打："
+echo "搞掂。之後每次啟動："
 echo "  hk-fin-pulse"
+echo "或者（一定得）："
+echo "  $INSTALL_DIR/bin/hk-fin-pulse"
+echo "  bash ~/start-hk-fin-pulse.sh"
+echo
 echo "然後開瀏覽器：http://127.0.0.1:${PORT}"
 echo
-echo "如果話搵唔到指令，先執行："
+echo "如果 command not found，先打："
+echo "  source ~/.bashrc"
 echo "  export PATH=\"\$HOME/.local/bin:\$PATH\""
-echo "  # 若用咗 nvm，新開終端或："
-echo "  source \"\$HOME/.nvm/nvm.sh\""
+echo "  source \"\$HOME/.nvm/nvm.sh\"   # 如果裝過 nvm"

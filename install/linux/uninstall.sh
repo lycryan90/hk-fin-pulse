@@ -13,7 +13,8 @@ fi
 rm -f "$HOME/.local/bin/hk-fin-pulse" \
       "$HOME/.local/bin/hk-fin-pulse-digest" \
       "$HOME/.local/bin/hk-fin-pulse-outlook" \
-      "$HOME/.local/share/applications/hk-fin-pulse.desktop"
+      "$HOME/.local/share/applications/hk-fin-pulse.desktop" \
+      "$HOME/start-hk-fin-pulse.sh"
 
 read -r -p "Delete install directory $INSTALL_DIR ? [y/N] " ans || ans=""
 if [[ "${ans,,}" == "y" || "${ans,,}" == "yes" ]]; then

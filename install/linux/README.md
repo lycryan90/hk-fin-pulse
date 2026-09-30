@@ -21,7 +21,7 @@ hk-fin-pulse
 ## 方法 B：有網絡，一鍵（連下載）
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/lycryan90/hk-fin-pulse/main/setup.sh | bash
+curl -fsSL https://cdn.jsdelivr.net/gh/lycryan90/hk-fin-pulse@main/setup.sh | bash
 ```
 
 ## 卸載

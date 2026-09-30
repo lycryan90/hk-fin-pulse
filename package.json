@@ -17,7 +17,8 @@
     "outlook:heuristic": "tsx scripts/run-outlook.ts --heuristic",
     "cron:install": "bash scripts/install-cron.sh",
     "cron:remove": "bash scripts/remove-cron.sh",
-    "install:linux": "bash install/linux/install.sh"
+    "install:linux": "bash install/linux/install.sh",
+    "portable:linux": "bash scripts/make-portable-linux.sh"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

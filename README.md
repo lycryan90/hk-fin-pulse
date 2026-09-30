@@ -30,24 +30,22 @@ npm run dev           # http://localhost:3457
 - `/history` 本地歷史
 - `GET/PUT /api/settings` · `GET/POST /api/digest` · `GET/POST /api/outlook`
 
-## Linux 安裝（最簡單）
+## Linux（最簡單：免安裝可攜版）
 
-已經下載／解壓之後，入資料夾打一行：
+下載 **一個** 壓縮包 → 解壓 → 雙擊／執行 `開始.sh`。**唔使裝 Node。**
 
-```bash
-bash setup.sh
-hk-fin-pulse   # http://127.0.0.1:3457
-```
-
-有網絡一鍵裝：
+1. 去 [Releases](https://github.com/lycryan90/hk-fin-pulse/releases) 下載 `hk-fin-pulse-linux-x64.tar.gz`
+2. 解壓到桌面
+3. 終端入去資料夾打：
 
 ```bash
-curl -fsSL https://cdn.jsdelivr.net/gh/lycryan90/hk-fin-pulse@main/setup.sh | bash
+chmod +x 開始.sh
+./開始.sh
 ```
 
-已經下載咗 ZIP／USB 就唔使 curl，直接喺資料夾入面：`bash setup.sh`。
+瀏覽器開 `http://127.0.0.1:3457`。
 
-詳見 [`install/linux/README.md`](install/linux/README.md)。
+（進階：原始碼版用 `bash setup.sh`，見 [`install/linux/README.md`](install/linux/README.md)）
 
 ## 趨勢及展望（建議接 LLM）
 

@@ -25,21 +25,22 @@ else
   INSTALL_DIR="${INSTALL_DIR:-$DEFAULT_DIR}"
 fi
 
-if ! command -v node >/dev/null 2>&1; then
-  echo "Node.js not found. Install Node 20+ first, e.g.:"
-  echo "  curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -"
-  echo "  sudo apt-get install -y nodejs"
+# Prefer nvm node if present
+# shellcheck disable=SC1091
+[[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
+
+if ! command -v node >/dev/null 2>&1 || ! command -v npm >/dev/null 2>&1; then
+  echo "Node.js / npm not found."
+  echo "Easiest fix — run the one-shot installer instead:"
+  echo "  curl -fsSL https://raw.githubusercontent.com/lycryan90/hk-fin-pulse/main/setup.sh | bash"
+  echo "Or from your downloaded folder:"
+  echo "  bash setup.sh"
   exit 1
 fi
 
 NODE_MAJOR="$(node -v | sed 's/^v//' | cut -d. -f1)"
 if [[ "$NODE_MAJOR" -lt 18 ]]; then
-  echo "Node.js 18+ required (found $(node -v))"
-  exit 1
-fi
-
-if ! command -v npm >/dev/null 2>&1; then
-  echo "npm not found"
+  echo "Node.js 18+ required (found $(node -v)). Run: bash setup.sh"
   exit 1
 fi
 

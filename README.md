@@ -30,14 +30,22 @@ npm run dev           # http://localhost:3457
 - `/history` 本地歷史
 - `GET/PUT /api/settings` · `GET/POST /api/digest` · `GET/POST /api/outlook`
 
-## Linux 安裝
+## Linux 安裝（最簡單）
 
-見 [`install/linux/README.md`](install/linux/README.md)：
+已經下載／解壓之後，入資料夾打一行：
 
 ```bash
-bash install/linux/install.sh
+bash setup.sh
 hk-fin-pulse   # http://127.0.0.1:3457
 ```
+
+有網絡一鍵裝：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/lycryan90/hk-fin-pulse/main/setup.sh | bash
+```
+
+詳見 [`install/linux/README.md`](install/linux/README.md)。
 
 ## 趨勢及展望（建議接 LLM）
 

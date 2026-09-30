@@ -136,17 +136,43 @@ if [[ ! -f "$INSTALL_DIR/.env.local" && ! -f "$INSTALL_DIR/data/settings.json" ]
   echo "Tip: open Settings in the web UI to add LLM API key / local Ollama URL."
 fi
 
+# Ensure ~/.local/bin is on PATH for future shells
+PATH_LINE='export PATH="$HOME/.local/bin:$PATH"'
+ensure_path_line() {
+  local file="$1"
+  [[ -f "$file" ]] || touch "$file"
+  if ! grep -qF '.local/bin' "$file" 2>/dev/null; then
+    printf '\n# hk-fin-pulse\n%s\n' "$PATH_LINE" >> "$file"
+    echo "==> Added ~/.local/bin to PATH in $file"
+  fi
+}
+ensure_path_line "$HOME/.profile"
+ensure_path_line "$HOME/.bashrc"
+[[ -f "$HOME/.zshrc" ]] && ensure_path_line "$HOME/.zshrc"
+
+# Also expose full-path helper so it works even before reloading shell
+cat > "$HOME/start-hk-fin-pulse.sh" <<EOF
+#!/usr/bin/env bash
+export PATH="\$HOME/.local/bin:\$PATH"
+# shellcheck disable=SC1091
+[[ -s "\$HOME/.nvm/nvm.sh" ]] && . "\$HOME/.nvm/nvm.sh"
+exec "$INSTALL_DIR/bin/hk-fin-pulse"
+EOF
+chmod +x "$HOME/start-hk-fin-pulse.sh"
+
 echo
 echo "Installed."
 echo "  App dir : $INSTALL_DIR"
 echo "  Start   : hk-fin-pulse"
 echo "            or: $INSTALL_DIR/bin/hk-fin-pulse"
+echo "            or: bash ~/start-hk-fin-pulse.sh"
 echo "  URL     : http://127.0.0.1:${PORT}"
 echo "  Digest  : hk-fin-pulse-digest"
 echo "  Outlook : hk-fin-pulse-outlook"
 echo "  Uninstall: bash $INSTALL_DIR/install/linux/uninstall.sh"
 echo
-if ! echo ":$PATH:" | grep -q ":$HOME/.local/bin:"; then
-  echo "Add to PATH (zsh/bash):"
-  echo "  echo 'export PATH=\"\$HOME/.local/bin:\$PATH\"' >> ~/.bashrc && source ~/.bashrc"
-fi
+echo "如果而家打 hk-fin-pulse 話 command not found，用下面其中一個："
+echo "  source ~/.bashrc"
+echo "  # 或者直接："
+echo "  $INSTALL_DIR/bin/hk-fin-pulse"
+echo "  bash ~/start-hk-fin-pulse.sh"

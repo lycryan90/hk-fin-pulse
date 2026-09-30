@@ -15,7 +15,8 @@ export default async function SettingsPage() {
       <div className="mx-auto max-w-2xl px-5 py-12">
         <h1 className="font-serif text-3xl text-[var(--ink)]">設定</h1>
         <p className="mt-2 text-sm text-[var(--muted)]">
-          LLM API 同本地模型設定會存喺本機，唔會上傳到 git。
+          LLM API 同本地模型設定會存喺本機，唔會上傳到 git。填好後可撳「測試本地
+          LLM」確認連線。
         </p>
         <SettingsForm initial={settings} />
       </div>

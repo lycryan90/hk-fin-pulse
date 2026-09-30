@@ -22,8 +22,10 @@ export function SettingsForm({ initial }: { initial: PublicSettings }) {
   const [llmTimeoutMs, setLlmTimeoutMs] = useState(initial.llmTimeoutMs);
   const [keySet, setKeySet] = useState(initial.llmApiKeySet);
   const [saving, setSaving] = useState(false);
+  const [testing, setTesting] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [testDetail, setTestDetail] = useState<string | null>(null);
 
   function applyLocalPreset() {
     setLlmProvider("local");
@@ -40,26 +42,30 @@ export function SettingsForm({ initial }: { initial: PublicSettings }) {
     setLlmModel(GEMINI_PRESET.llmModel);
   }
 
+  function formPayload(includeMaskedKey = true): Record<string, unknown> {
+    const body: Record<string, unknown> = {
+      llmEnabled,
+      llmProvider,
+      llmBaseUrl,
+      llmModel,
+      llmTimeoutMs,
+    };
+    if (llmApiKey.trim()) body.llmApiKey = llmApiKey.trim();
+    else if (includeMaskedKey && keySet) body.llmApiKey = "••••xxxx";
+    return body;
+  }
+
   async function onSave(e: React.FormEvent) {
     e.preventDefault();
     setSaving(true);
     setMessage(null);
     setError(null);
+    setTestDetail(null);
     try {
-      const body: Record<string, unknown> = {
-        llmEnabled,
-        llmProvider,
-        llmBaseUrl,
-        llmModel,
-        llmTimeoutMs,
-      };
-      if (llmApiKey.trim()) body.llmApiKey = llmApiKey.trim();
-      else if (keySet) body.llmApiKey = "••••xxxx";
-
       const res = await fetch("/api/settings", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
+        body: JSON.stringify(formPayload()),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "儲存失敗");
@@ -70,6 +76,52 @@ export function SettingsForm({ initial }: { initial: PublicSettings }) {
       setError(err instanceof Error ? err.message : "儲存失敗");
     } finally {
       setSaving(false);
+    }
+  }
+
+  async function onTest() {
+    setTesting(true);
+    setMessage(null);
+    setError(null);
+    setTestDetail(null);
+    try {
+      const res = await fetch("/api/settings/test", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formPayload()),
+      });
+      const data = (await res.json()) as {
+        ok?: boolean;
+        latencyMs?: number;
+        reply?: string;
+        error?: string;
+        hint?: string;
+        model?: string;
+        baseUrl?: string;
+      };
+      if (data.ok) {
+        setMessage(`連線成功（${data.latencyMs ?? "?"} ms）`);
+        setTestDetail(
+          [
+            `Model: ${data.model || llmModel}`,
+            `URL: ${data.baseUrl || llmBaseUrl}`,
+            data.reply ? `回覆：${data.reply}` : null,
+          ]
+            .filter(Boolean)
+            .join("\n"),
+        );
+      } else {
+        setError(data.error || "測試失敗");
+        setTestDetail(
+          [data.hint, data.baseUrl ? `URL: ${data.baseUrl}` : null]
+            .filter(Boolean)
+            .join("\n") || null,
+        );
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "測試失敗");
+    } finally {
+      setTesting(false);
     }
   }
 
@@ -170,13 +222,38 @@ export function SettingsForm({ initial }: { initial: PublicSettings }) {
         />
       </label>
 
-      <div className="flex items-center gap-3">
-        <Button type="submit" disabled={saving}>
+      <div className="flex flex-wrap items-center gap-3">
+        <Button type="submit" disabled={saving || testing}>
           {saving ? "儲存中…" : "儲存"}
         </Button>
-        {message ? <span className="text-sm text-[var(--accent)]">{message}</span> : null}
-        {error ? <span className="text-sm text-red-700">{error}</span> : null}
+        <Button
+          type="button"
+          variant="outline"
+          disabled={saving || testing}
+          onClick={onTest}
+        >
+          {testing ? "測試中…" : llmProvider === "local" ? "測試本地 LLM" : "測試連線"}
+        </Button>
       </div>
+
+      {message ? (
+        <p className="text-sm text-[var(--accent)]">{message}</p>
+      ) : null}
+      {error ? <p className="text-sm text-red-700">{error}</p> : null}
+      {testDetail ? (
+        <pre className="whitespace-pre-wrap rounded-none border border-[var(--line)] bg-[var(--mist)]/40 px-3 py-2 text-xs text-[var(--muted)]">
+          {testDetail}
+        </pre>
+      ) : null}
+
+      {llmProvider === "local" ? (
+        <p className="text-xs leading-relaxed text-[var(--muted)]">
+          測試會向 Base URL 發送一條極短對話。Ollama 請先執行{" "}
+          <code className="text-[var(--ink)]">ollama serve</code> 同{" "}
+          <code className="text-[var(--ink)]">ollama pull {llmModel || "llama3.2"}</code>
+          。
+        </p>
+      ) : null}
     </form>
   );
 }

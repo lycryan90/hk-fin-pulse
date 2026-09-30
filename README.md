@@ -24,12 +24,20 @@ npm run dev           # http://localhost:3457
 
 瀏覽：
 
-- `/` 最新日報
-- `/outlook` **趨勢及展望**（地緣／金融貨幣／中港核心／板塊輪動）
+- `/` 最新日報（**重搜** = 重新抓 RSS 並分析；**PDF** = 列印／另存 PDF）
+- `/outlook` 趨勢及展望
+- `/settings` **LLM 設定**（雲端 API Key 或本地 Ollama Base URL／Model）
 - `/history` 本地歷史
-- `GET /api/digest` · `POST /api/digest/generate`
-- `GET /api/outlook` · `POST /api/outlook/generate`
-- `GET /api/health`
+- `GET/PUT /api/settings` · `GET/POST /api/digest` · `GET/POST /api/outlook`
+
+## Linux 安裝
+
+見 [`install/linux/README.md`](install/linux/README.md)：
+
+```bash
+bash install/linux/install.sh
+hk-fin-pulse   # http://127.0.0.1:3457
+```
 
 ## 趨勢及展望（建議接 LLM）
 

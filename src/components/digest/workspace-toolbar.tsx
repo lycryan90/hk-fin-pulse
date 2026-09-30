@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ExportPdfButton } from "@/components/digest/export-pdf-button";
 import { ReadAloud } from "@/components/digest/read-aloud";
 import type { Digest } from "@/lib/digest/schema";
 import { UI } from "@/lib/locale/labels";
@@ -45,7 +46,7 @@ export function WorkspaceToolbar({ digest }: { digest?: Digest | null }) {
     }
   }
 
-  async function onGenerate() {
+  async function onRescan() {
     setLoading(true);
     setError(null);
     try {
@@ -68,14 +69,16 @@ export function WorkspaceToolbar({ digest }: { digest?: Digest | null }) {
   }
 
   const t = UI[locale];
+  const rescanLabel = locale === "en-GB" ? "Rescan" : "重搜";
+  const settingsLabel = locale === "en-GB" ? "Settings" : "設定";
 
   return (
-    <div className="sticky top-0 z-20 border-b border-[var(--line)]/80 bg-[var(--paper)]/85 backdrop-blur-md">
+    <div className="no-print sticky top-0 z-20 border-b border-[var(--line)]/80 bg-[var(--paper)]/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-2xl items-center justify-between gap-3 px-5 py-3">
         <Link href="/" className="font-serif text-[15px] tracking-wide text-[var(--ink)]">
           {t.workspace}
         </Link>
-        <div className="flex items-center gap-1 text-xs">
+        <div className="flex flex-wrap items-center justify-end gap-1 text-xs">
           <button
             type="button"
             className={`px-1.5 py-1 ${locale === "zh-HK" ? "text-[var(--ink)]" : "text-[var(--muted)]"}`}
@@ -92,9 +95,10 @@ export function WorkspaceToolbar({ digest }: { digest?: Digest | null }) {
             {t.localeEn}
           </button>
           {digest ? <ReadAloud digest={digest} /> : null}
-          <Button size="sm" variant="ghost" onClick={onGenerate} disabled={loading}>
-            {loading ? t.generating : t.regenerate}
+          <Button size="sm" variant="ghost" onClick={onRescan} disabled={loading}>
+            {loading ? t.generating : rescanLabel}
           </Button>
+          {digest ? <ExportPdfButton label="PDF" /> : null}
           <Link
             href="/outlook"
             className="px-1.5 py-1 text-[var(--muted)] hover:text-[var(--ink)]"
@@ -106,6 +110,12 @@ export function WorkspaceToolbar({ digest }: { digest?: Digest | null }) {
             className="px-1.5 py-1 text-[var(--muted)] hover:text-[var(--ink)]"
           >
             {t.history}
+          </Link>
+          <Link
+            href="/settings"
+            className="px-1.5 py-1 text-[var(--muted)] hover:text-[var(--ink)]"
+          >
+            {settingsLabel}
           </Link>
         </div>
       </div>

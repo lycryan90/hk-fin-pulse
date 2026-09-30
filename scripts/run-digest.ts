@@ -1,10 +1,9 @@
-import { loadEnvFile } from "../src/lib/env";
 import { isDigestLocale, type DigestLocale } from "../src/lib/locale/types";
 import { generateDigest } from "../src/lib/pipeline/run";
+import { ensureRuntimeConfig } from "../src/lib/settings/ensure";
 
 async function main() {
-  await loadEnvFile(".env");
-  await loadEnvFile(".env.local");
+  await ensureRuntimeConfig();
 
   const forceSeed = process.argv.includes("--seed");
   const en = process.argv.includes("--en") || process.argv.includes("--en-GB");

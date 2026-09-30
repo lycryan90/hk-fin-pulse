@@ -1,10 +1,9 @@
-import { loadEnvFile } from "../src/lib/env";
 import { isDigestLocale, type DigestLocale } from "../src/lib/locale/types";
 import { generateWeeklyOutlook } from "../src/lib/outlook/generate";
+import { ensureRuntimeConfig } from "../src/lib/settings/ensure";
 
 async function main() {
-  await loadEnvFile(".env");
-  await loadEnvFile(".env.local");
+  await ensureRuntimeConfig();
 
   const en = process.argv.includes("--en") || process.argv.includes("--en-GB");
   const zh = process.argv.includes("--zh") || process.argv.includes("--zh-HK");

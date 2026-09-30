@@ -20,13 +20,20 @@ export type WriterBundle = {
   llmNote?: string;
 };
 
-const LLM_TIMEOUT_MS = Number(process.env.LLM_TIMEOUT_MS || 90_000);
+export function llmTimeoutMs(): number {
+  return Number(process.env.LLM_TIMEOUT_MS || 90_000);
+}
 
 export function llmConfigured(): boolean {
   if (process.env.LLM_ENABLED === "0" || process.env.LLM_ENABLED === "false") {
     return false;
   }
-  return Boolean(process.env.LLM_API_KEY || process.env.OPENAI_API_KEY);
+  const key = process.env.LLM_API_KEY || process.env.OPENAI_API_KEY;
+  const base = process.env.LLM_BASE_URL || process.env.OPENAI_BASE_URL;
+  if (process.env.LLM_ENABLED === "true" || process.env.LLM_ENABLED === "1") {
+    return Boolean(key || base);
+  }
+  return Boolean(key);
 }
 
 export function llmEndpoint(): { base: string; key: string; model: string } {
@@ -62,14 +69,14 @@ export async function callLlmJson(
   if (!llmConfigured()) return null;
   const { base, key, model } = llmEndpoint();
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), LLM_TIMEOUT_MS);
+  const timer = setTimeout(() => controller.abort(), llmTimeoutMs());
   try {
     const res = await fetch(`${base}/chat/completions`, {
       method: "POST",
       signal: controller.signal,
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${key}`,
+        Authorization: `Bearer ${key || "local"}`,
       },
       body: JSON.stringify({
         model,

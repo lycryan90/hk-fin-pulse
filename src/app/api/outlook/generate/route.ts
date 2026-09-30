@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { isDigestLocale } from "@/lib/locale/types";
 import { generateWeeklyOutlook } from "@/lib/outlook/generate";
+import { ensureRuntimeConfig } from "@/lib/settings/ensure";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -8,6 +9,7 @@ export const maxDuration = 120;
 
 export async function POST(request: Request) {
   try {
+    await ensureRuntimeConfig();
     const body = (await request.json().catch(() => ({}))) as {
       locale?: string;
       weekOf?: string;

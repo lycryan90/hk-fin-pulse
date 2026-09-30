@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ExportPdfButton } from "@/components/digest/export-pdf-button";
 import type { Digest } from "@/lib/digest/schema";
 import { UI } from "@/lib/locale/labels";
 import {
@@ -79,7 +80,7 @@ export function OutlookToolbar({
   const outlookLabel = locale === "en-GB" ? "Outlook" : "趨勢";
 
   return (
-    <div className="sticky top-0 z-20 border-b border-[var(--line)]/80 bg-[var(--paper)]/85 backdrop-blur-md">
+    <div className="no-print sticky top-0 z-20 border-b border-[var(--line)]/80 bg-[var(--paper)]/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-2xl items-center justify-between gap-3 px-5 py-3">
         <div className="flex items-center gap-3">
           <Link href="/" className="font-serif text-[15px] tracking-wide text-[var(--muted)] hover:text-[var(--ink)]">
@@ -105,10 +106,11 @@ export function OutlookToolbar({
             {t.localeEn}
           </button>
           <Button size="sm" variant="ghost" onClick={onGenerate} disabled={loading}>
-            {loading ? t.generating : t.regenerate}
+            {loading ? t.generating : locale === "en-GB" ? "Rescan" : "重搜"}
           </Button>
-          <Link href="/history" className="px-1.5 py-1 text-[var(--muted)] hover:text-[var(--ink)]">
-            {t.history}
+          <ExportPdfButton label="PDF" />
+          <Link href="/settings" className="px-1.5 py-1 text-[var(--muted)] hover:text-[var(--ink)]">
+            {locale === "en-GB" ? "Settings" : "設定"}
           </Link>
         </div>
       </div>

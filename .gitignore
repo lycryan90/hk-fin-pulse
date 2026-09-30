@@ -34,6 +34,9 @@ yarn-error.log*
 .env*
 !.env.example
 
+# local secrets from settings UI
+/data/settings.json
+
 # cron / runtime logs
 /data/logs/
 # local writer comparisons may contain freshly generated copy

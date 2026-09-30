@@ -1,13 +1,15 @@
 import { NextResponse } from "next/server";
 import { isDigestLocale } from "@/lib/locale/types";
 import { generateDigest } from "@/lib/pipeline/run";
+import { ensureRuntimeConfig } from "@/lib/settings/ensure";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-export const maxDuration = 60;
+export const maxDuration = 120;
 
 export async function POST(request: Request) {
   try {
+    await ensureRuntimeConfig();
     const body = (await request.json().catch(() => ({}))) as {
       forceSeed?: boolean;
       locale?: string;

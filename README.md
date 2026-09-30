@@ -42,8 +42,13 @@ hk-fin-pulse   # http://127.0.0.1:3457
 有網絡一鍵裝：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/lycryan90/hk-fin-pulse/main/setup.sh | bash
+curl -fsSL https://cdn.jsdelivr.net/gh/lycryan90/hk-fin-pulse@main/setup.sh | bash
 ```
+
+已經下載� https://cdn.jsdelivr.net/gh/lycryan90/hk-fin-pulse@main/setup.sh | bash
+```
+
+已經下載咗 ZIP／USB 就唔使 curl，直接喺資料夾入面：`bash setup.sh`。
 
 詳見 [`install/linux/README.md`](install/linux/README.md)。
 

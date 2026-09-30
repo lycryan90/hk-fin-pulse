@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # 最簡單安裝：喺已下載嘅資料夾執行，或用 curl 一鍵裝
 #   bash setup.sh
-#   curl -fsSL https://raw.githubusercontent.com/lycryan90/hk-fin-pulse/main/setup.sh | bash
+#   curl -fsSL https://cdn.jsdelivr.net/gh/lycryan90/hk-fin-pulse@main/setup.sh | bash
 set -euo pipefail
 
 REPO_URL="${REPO_URL:-https://github.com/lycryan90/hk-fin-pulse.git}"

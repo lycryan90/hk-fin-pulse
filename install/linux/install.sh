@@ -32,7 +32,7 @@ fi
 if ! command -v node >/dev/null 2>&1 || ! command -v npm >/dev/null 2>&1; then
   echo "Node.js / npm not found."
   echo "Easiest fix — run the one-shot installer instead:"
-  echo "  curl -fsSL https://raw.githubusercontent.com/lycryan90/hk-fin-pulse/main/setup.sh | bash"
+  echo "  curl -fsSL https://cdn.jsdelivr.net/gh/lycryan90/hk-fin-pulse@main/setup.sh | bash"
   echo "Or from your downloaded folder:"
   echo "  bash setup.sh"
   exit 1

@@ -97,8 +97,6 @@ echo "搞掂。之後每次啟動只需要打："
 echo "  hk-fin-pulse"
 echo "然後開瀏覽器：http://127.0.0.1:${PORT}"
 echo
-echo "如果話�瀏覽器：http://127.0.0.1:${PORT}"
-echo
 echo "如果話搵唔到指令，先執行："
 echo "  export PATH=\"\$HOME/.local/bin:\$PATH\""
 echo "  # 若用咗 nvm，新開終端或："
